@@ -269,7 +269,7 @@ int
 usbStringMatches (const char *reference, const char *value) {
   int ok = 0;
 
-#ifdef REG_EXTENDED
+#if !defined(__MINGW32__) && defined(REG_EXTENDED)
   regex_t expression;
 
   if (regcomp(&expression, value, REG_EXTENDED|REG_NOSUB) == 0) {
@@ -279,7 +279,7 @@ usbStringMatches (const char *reference, const char *value) {
 
     regfree(&expression);
   }
-#endif /* REG_EXTENDED */
+#endif //* REG_EXTENDED */
 
   return ok;
 }

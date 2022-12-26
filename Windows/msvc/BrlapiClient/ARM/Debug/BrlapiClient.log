@@ -1,0 +1,25 @@
+﻿  brlapi_client.c
+C:\msys64\mingw32\brltty\Headers\gettime.h(46,16): warning C4013: 'time' undefined; assuming extern returning int
+C:\msys64\mingw32\brltty\Headers\win_pthread.h(63,66): warning C4244: '=': conversion from 'const time_t' to 'LONG', possible loss of data
+C:\msys64\mingw32\brltty\Programs\brlapi.h(65,25): warning C4142: 'uint64_t': benign redefinition of type
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\stdint.h(25): message : see declaration of 'uint64_t'
+C:\msys64\mingw32\brltty\Programs\brlapi.h(66,25): warning C4142: 'uint32_t': benign redefinition of type
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\stdint.h(24): message : see declaration of 'uint32_t'
+C:\msys64\mingw32\brltty\Programs\brlapi.h(67,1): warning C4005: 'UINT64_C': macro redefinition
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\include\stdint.h(131): message : see previous definition of 'UINT64_C'
+C:\msys64\mingw32\brltty\Programs\brlapi.h(68,1): warning C4005: 'PRIx64': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\inttypes.h(193): message : see previous definition of 'PRIx64'
+C:\msys64\mingw32\brltty\Programs\brlapi_common.h(347,10): warning C4018: '<': signed/unsigned mismatch
+C:\msys64\mingw32\brltty\Programs\brlapi_common.h(350,20): warning C4018: '<': signed/unsigned mismatch
+C:\msys64\mingw32\brltty\Programs\brlapi_common.h(396,17): warning C4013: '_open' undefined; assuming extern returning int
+C:\msys64\mingw32\brltty\Programs\brlapi_common.h(403,14): warning C4013: '_get_osfhandle' undefined; assuming extern returning int
+C:\msys64\mingw32\brltty\Programs\brlapi_common.h(411,10): warning C4013: '_close' undefined; assuming extern returning int
+C:\msys64\mingw32\brltty\Programs\brlapi_common.h(442,49): warning C4244: '=': conversion from 'long' to 'uint16_t', possible loss of data
+C:\msys64\mingw32\brltty\Programs\brlapi_client.c(733,42): warning C4090: 'function': different 'const' qualifiers
+C:\msys64\mingw32\brltty\Programs\brlapi_client.c(736,63): warning C4090: 'function': different 'const' qualifiers
+C:\msys64\mingw32\brltty\Programs\brlapi_client.c(738,63): warning C4090: 'function': different 'const' qualifiers
+C:\msys64\mingw32\brltty\Programs\brlapi_client.c(1118,84): warning C4028: formal parameter 2 different from declaration
+C:\msys64\mingw32\brltty\Programs\brlapi_client.c(1175,57): warning C4028: formal parameter 1 different from declaration
+  LINK : C:\msys64\mingw32\brltty\Windows\msvc\BrlapiClient\ARM\Debug\BrlapiClient.dll not found or not built by the last incremental link; performing full link
+     Creating library C:\msys64\mingw32\brltty\Windows\msvc\BrlapiClient\ARM\Debug\BrlapiClient.lib and object C:\msys64\mingw32\brltty\Windows\msvc\BrlapiClient\ARM\Debug\BrlapiClient.exp
+  BrlapiClient.vcxproj -> C:\msys64\mingw32\brltty\Windows\msvc\BrlapiClient\ARM\Debug\BrlapiClient.dll

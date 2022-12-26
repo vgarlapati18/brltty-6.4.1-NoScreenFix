@@ -287,7 +287,7 @@ parseProgramArguments "${@}"
 readonly windowsDirectory="/c"
 verifyDirectory "${windowsDirectory}"
 
-readonly mingwDirectory="/mingw"
+readonly mingwDirectory="/mingw32"
 verifyDirectory "${mingwDirectory}"
 
 readonly commandsDirectory="${mingwDirectory}/bin"

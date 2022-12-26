@@ -20,7 +20,10 @@
 #define BRLTTY_INCLUDED_GETTIME
 
 #include "prologue.h"
+
+#if defined(__MINGW32__) && !defined(_MSC_VER)
 #include <sys/time.h>
+#endif /* defined(__MINGW32__) && !defined(_MSC_VER) */
 
 #ifdef HAVE_CLOCK_GETTIME
 #include <time.h>
@@ -40,7 +43,7 @@ getRealTime (struct timeval *now) {
   now->tv_sec = time.tv_sec;
   now->tv_usec = time.tv_nsec / 1000;
 #else /* getRealTime */
-  result = gettimeofday(now, NULL);
+  result = time(&now);
 #endif /* getRealTime */
 
   return result;

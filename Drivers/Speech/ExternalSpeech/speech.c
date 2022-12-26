@@ -30,9 +30,12 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
+#ifndef _MSC_VER
+#ifndef __MINGW32__
 #include <sys/socket.h>
 #include <sys/un.h>
-
+#endif
+#endif
 
 #include "log.h"
 #include "timing.h"
@@ -183,6 +186,7 @@ static int spk_construct (SpeechSynthesizer *spk, char **parameters)
 
   if(!*extSockPath) extSockPath = HELPER_SOCKET_PATH;
 
+#if !defined(__MINGW32__) && !defined(_MSC_VER)
   if((helper_fd = socket(PF_UNIX, SOCK_STREAM, 0)) <0) {
     myperror(spk, "socket");
     return 0;
@@ -204,7 +208,7 @@ static int spk_construct (SpeechSynthesizer *spk, char **parameters)
     return 0;
   }
   logMessage(LOG_INFO, "Connected to ExternalSpeech helper socket at %s", extSockPath);
-
+#endif
 
   asyncReadFile(&trackHandle, helper_fd, TRACK_DATA_SIZE*10, xsHandleSpeechTrackingInput, (void *)spk);
   return 1;

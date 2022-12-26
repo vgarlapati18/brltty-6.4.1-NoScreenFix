@@ -26,6 +26,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
+#ifndef _MSC_VER
 #ifdef __MINGW32__
 #include <io.h>
 #else /* __MINGW32__ */
@@ -34,6 +35,13 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #endif /* __MINGW32__ */
+#endif /* _MSC_VER */
+
+#ifdef _MSC_VER
+#define strdup _strdup
+#define open _open
+#define close _close
+#endif /* _MSC_VER */
 
 #include "brlapi_protocol.h"
 
@@ -883,11 +891,11 @@ static void convertInteger_ntoh64 (void *v) {
 static void convertIntegers (void *data, size_t length, size_t size, IntegerConverter *convert) {
   length /= size;
   length *= size;
-  void *end = data + length;
+  void *end = ((int*)data + length);
 
   while (data < end) {
     convert(data);
-    data += size;
+    data = (int*)data+size;
   }
 }
 

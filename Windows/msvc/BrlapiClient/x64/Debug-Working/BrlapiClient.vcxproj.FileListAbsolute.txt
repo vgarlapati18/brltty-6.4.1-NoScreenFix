@@ -1,0 +1,1 @@
+C:\msys64\mingw32\brltty\Windows\msvc\BrlapiClient\x64\Debug\BrlapiClient.dll

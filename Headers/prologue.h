@@ -149,9 +149,9 @@ static inline void __sync_synchronize (void) {}
 #include <windows.h>
 #endif /* WINDOWS */
 
-#ifdef __MINGW32__
+#if defined(__MINGW32__) && !defined(_MSC_VER)
 #include <_mingw.h>
-#endif /* __MINGW32__ */
+#endif /* defined(__MINGW32__) && !defined(_MSC_VER) */
 
 /*
  * The (poorly named) macro "interface" is unfortunately defined within
@@ -165,7 +165,9 @@ static inline void __sync_synchronize (void) {}
 #include <sys/types.h>
 #include <stddef.h>
 #include <stdlib.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 #include <inttypes.h>
 
 #ifdef __MINGW32__
@@ -386,6 +388,10 @@ mbsinit (const mbstate_t *ps) {
 #else /* WORDS_BIGENDIAN */
 #define CHARSET_ENDIAN_SUFFIX "LE"
 #endif /* WORDS_BIGENDIAN */
+
+#if !defined(SIZEOF_WCHAR_T_STR) && defined(_MSC_VER)
+#define SIZEOF_WCHAR_T_STR "2"
+#endif /* !defined(SIZEOF_WCHAR_T_STR) && defined(_MSC_VER) */
 
 #define WCHAR_CHARSET ("UCS-" SIZEOF_WCHAR_T_STR CHARSET_ENDIAN_SUFFIX)
 

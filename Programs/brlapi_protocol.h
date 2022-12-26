@@ -37,7 +37,9 @@ extern "C" {
 #endif /* UINT32_MAX */
 
 /* The type size_t is defined there! */
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 
 /** \defgroup brlapi_protocol BrlAPI's protocol
  * \brief Instructions and constants for \e BrlAPI 's protocol

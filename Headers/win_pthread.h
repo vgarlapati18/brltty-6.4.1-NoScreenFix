@@ -29,7 +29,10 @@
 #include <windows.h>
 #include <stdio.h>
 #include <errno.h>
+
+#if defined(__MINGW32__) && !defined(_MSC_VER)
 #include <sys/time.h>
+#endif /* defined(__MINGW32__) && !defined(_MSC_VER) */
 
 #include "gettime.h"
 
